@@ -147,12 +147,14 @@
             <span>Selected work</span>
             <span>2024 — 2026</span>
           </div>
-          <div class="panel-preview" id="panel-preview" aria-hidden="true"></div>
+          <div class="panel-preview" id="panel-preview" aria-hidden="true">
+            <div class="panel-caption"><span class="pc-title" id="pc-title"></span><span class="pc-desc" id="pc-desc"></span></div>
+          </div>
           <ol class="panel-list">
-            <li><a href="#project-lumen"><span class="pl-num">01</span><span class="pl-title">Lumen Banking</span><span class="pl-cat">Product</span><svg class="pl-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
-            <li><a href="#project-noma"><span class="pl-num">02</span><span class="pl-title">Atelier Noma</span><span class="pl-cat">Branding</span><svg class="pl-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
-            <li><a href="#project-northwind"><span class="pl-num">03</span><span class="pl-title">Northwind Outdoor</span><span class="pl-cat">Web</span><svg class="pl-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
-            <li><a href="#project-pulse"><span class="pl-num">04</span><span class="pl-title">Pulse Analytics</span><span class="pl-cat">Product</span><svg class="pl-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="#project-lumen"><span class="pl-num">01</span><span class="pl-title">Lumen Banking</span><span class="pl-cat">Product</span><span class="pl-progress" aria-hidden="true"></span><svg class="pl-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="#project-noma"><span class="pl-num">02</span><span class="pl-title">Atelier Noma</span><span class="pl-cat">Branding</span><span class="pl-progress" aria-hidden="true"></span><svg class="pl-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="#project-northwind"><span class="pl-num">03</span><span class="pl-title">Northwind Outdoor</span><span class="pl-cat">Web</span><span class="pl-progress" aria-hidden="true"></span><svg class="pl-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a href="#project-pulse"><span class="pl-num">04</span><span class="pl-title">Pulse Analytics</span><span class="pl-cat">Product</span><span class="pl-progress" aria-hidden="true"></span><svg class="pl-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
           </ol>
         </aside>
       </div>
@@ -390,11 +392,12 @@
             <div class="project-cover">
               <svg viewBox="0 0 640 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
                 <defs>
-                  <linearGradient id="c1a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d1a26"/><stop offset="1" stop-color="#0f0f13"/></linearGradient>
+                  <linearGradient id="c1a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#262c3a"/><stop offset="1" stop-color="#141821"/></linearGradient>
+                  <radialGradient id="c1c" cx=".8" cy=".1" r=".7"><stop offset="0" stop-color="#f4b26f" stop-opacity=".24"/><stop offset="1" stop-color="#f4b26f" stop-opacity="0"/></radialGradient>
                   <linearGradient id="c1b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd7a3"/><stop offset=".5" stop-color="#f4b26f"/><stop offset="1" stop-color="#ec7c56"/></linearGradient>
                 </defs>
                 <rect width="640" height="480" fill="url(#c1a)"/>
-                <circle cx="520" cy="70" r="230" fill="#f4b26f" opacity=".07"/>
+                <rect width="640" height="480" fill="url(#c1c)"/>
                 <g transform="rotate(-8 320 240)">
                   <rect x="150" y="130" width="300" height="186" rx="20" fill="url(#c1b)"/>
                   <rect x="178" y="160" width="46" height="34" rx="7" fill="#fff" opacity=".35"/>
@@ -403,7 +406,7 @@
                   <circle cx="398" cy="178" r="18" fill="#fff" opacity=".3"/><circle cx="420" cy="178" r="18" fill="#fff" opacity=".2"/>
                 </g>
                 <g transform="rotate(6 430 320)">
-                  <rect x="300" y="250" width="250" height="150" rx="18" fill="#18181d" stroke="#fff" stroke-opacity=".12"/>
+                  <rect x="300" y="250" width="250" height="150" rx="18" fill="#1b2029" stroke="#fff" stroke-opacity=".14"/>
                   <path d="M326 360c30-10 40-50 70-46s36 30 62 22 40-44 68-50" fill="none" stroke="#f4b26f" stroke-width="3" stroke-linecap="round"/>
                   <rect x="326" y="274" width="70" height="8" rx="4" fill="#fff" opacity=".3"/>
                   <rect x="326" y="290" width="110" height="14" rx="5" fill="#fff" opacity=".75"/>
@@ -544,11 +547,11 @@
             <div class="project-cover">
               <svg viewBox="0 0 640 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
                 <defs>
-                  <linearGradient id="c4a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a1714"/><stop offset="1" stop-color="#0e0e10"/></linearGradient>
+                  <linearGradient id="c4a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#33231b"/><stop offset="1" stop-color="#1a120e"/></linearGradient>
                   <linearGradient id="c4b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4b26f"/><stop offset="1" stop-color="#f4b26f" stop-opacity=".12"/></linearGradient>
                 </defs>
                 <rect width="640" height="480" fill="url(#c4a)"/>
-                <rect x="90" y="90" width="460" height="300" rx="18" fill="#16151a" stroke="#fff" stroke-opacity=".1"/>
+                <rect x="90" y="90" width="460" height="300" rx="18" fill="#21160f" stroke="#fff" stroke-opacity=".12"/>
                 <rect x="118" y="118" width="90" height="10" rx="5" fill="#fff" opacity=".3"/>
                 <rect x="118" y="140" width="150" height="20" rx="6" fill="#fff" opacity=".85"/>
                 <g fill="url(#c4b)">

@@ -177,20 +177,36 @@
   var projects = $$('.project');
 
   /* ---------- Hero work index ---------- */
+  var panel = $('.hero-panel');
   var panelPreview = $('#panel-preview');
+  var captionTitle = $('#pc-title');
+  var captionDesc = $('#pc-desc');
   var panelLinks = $$('.panel-list a');
+  var activeLink = null;
 
   function activatePanel(link) {
+    if (!link || link === activeLink) return;
+    activeLink = link;
     panelLinks.forEach(function (l) {
       var on = l === link;
       l.classList.toggle('is-active', on);
       if (l._preview) l._preview.classList.toggle('is-active', on);
     });
+    if (link._project && captionTitle) {
+      captionTitle.textContent = projectName(link._project);
+      captionDesc.textContent = $('.project-desc', link._project).textContent.trim();
+      if (!reduceMotion) {
+        panelPreview.classList.remove('is-changing');
+        void panelPreview.offsetWidth; // restart the caption animation
+        panelPreview.classList.add('is-changing');
+      }
+    }
   }
 
   panelLinks.forEach(function (link) {
     var project = $(link.getAttribute('href'));
     if (!project) return;
+    link._project = project;
     if (panelPreview) {
       link._preview = cloneCover($('.project-cover svg', project));
       panelPreview.appendChild(link._preview);
@@ -203,6 +219,47 @@
     });
   });
   if (panelLinks.length) activatePanel(panelLinks[0]);
+
+  if (panelPreview) {
+    panelPreview.addEventListener('click', function () {
+      if (activeLink && activeLink._project) openProject(projects.indexOf(activeLink._project), activeLink);
+    });
+  }
+
+  // Slow autoplay through the index. The CSS progress line drives the timing,
+  // so pausing that animation pauses the rotation too.
+  if (panel && panelLinks.length > 1 && !reduceMotion) {
+    var pauseReasons = { hover: false, focus: false, offscreen: false, hidden: document.hidden };
+    var updatePause = function () {
+      var paused = Object.keys(pauseReasons).some(function (k) { return pauseReasons[k]; });
+      panel.classList.toggle('is-paused', paused);
+    };
+    panel.classList.add('is-autoplay');
+    panel.addEventListener('pointerenter', function (e) {
+      if (e.pointerType === 'mouse') { pauseReasons.hover = true; updatePause(); }
+    });
+    panel.addEventListener('pointerleave', function () { pauseReasons.hover = false; updatePause(); });
+    panel.addEventListener('focusin', function () { pauseReasons.focus = true; updatePause(); });
+    panel.addEventListener('focusout', function (e) {
+      if (!panel.contains(e.relatedTarget)) { pauseReasons.focus = false; updatePause(); }
+    });
+    document.addEventListener('visibilitychange', function () {
+      pauseReasons.hidden = document.hidden;
+      updatePause();
+    });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        pauseReasons.offscreen = !entries[0].isIntersecting;
+        updatePause();
+      }).observe(panel);
+    }
+    panel.addEventListener('animationend', function (e) {
+      if (!e.target.classList.contains('pl-progress')) return;
+      var i = panelLinks.indexOf(activeLink);
+      activatePanel(panelLinks[(i + 1) % panelLinks.length]);
+    });
+    updatePause();
+  }
 
   /* ---------- Project filters ---------- */
   var filters = $$('.filter');
