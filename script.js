@@ -43,7 +43,8 @@
 
   function setMenu(open) {
     mobileMenu.classList.toggle('is-open', open);
-    mobileMenu.setAttribute('aria-hidden', String(!open));
+    if (open) mobileMenu.removeAttribute('inert');
+    else mobileMenu.setAttribute('inert', '');
     menuToggle.setAttribute('aria-expanded', String(open));
     menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     if (menuLabel) menuLabel.textContent = open ? 'Close' : 'Menu';

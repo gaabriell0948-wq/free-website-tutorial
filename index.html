@@ -75,15 +75,15 @@
   </header>
 
   <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <nav aria-label="Mobile">
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" inert>
+    <div class="mm-nav">
       <ul class="mm-list">
         <li><a class="mm-link" href="#about"><span class="mm-num">01</span><span>About</span><svg class="mm-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
         <li><a class="mm-link" href="#services"><span class="mm-num">02</span><span>Services</span><svg class="mm-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
         <li><a class="mm-link" href="#work"><span class="mm-num">03</span><span>Work</span><svg class="mm-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
         <li><a class="mm-link" href="#contact"><span class="mm-num">04</span><span>Contact</span><svg class="mm-arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
       </ul>
-    </nav>
+    </div>
     <div class="mm-foot">
       <a class="btn btn-primary" href="#contact">
         Start a project
@@ -91,14 +91,14 @@
       </a>
       <div class="mm-contact">
         <a href="mailto:hello@adrianvale.com">hello@adrianvale.com</a>
-        <ul class="mm-social" aria-label="Social profiles">
+        <ul class="mm-social">
           <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer">Dribbble</a></li>
         </ul>
       </div>
     </div>
-  </div>
+  </nav>
 
   <main id="main">
     <span id="top"></span>
@@ -267,7 +267,7 @@
 
             <div class="about-block" data-reveal>
               <h3 class="sub-label">Toolkit</h3>
-              <ul class="tags tags-lg" aria-label="Tools and technologies">
+              <ul class="tags tags-lg">
                 <li>Figma</li><li>HTML &amp; CSS</li><li>JavaScript</li><li>TypeScript</li><li>Webflow</li><li>GSAP</li><li>Accessibility</li><li>Prototyping</li>
               </ul>
             </div>
@@ -291,7 +291,7 @@
         </div>
 
         <div class="services-grid">
-          <article class="service-card spot" data-reveal style="--d:0">
+          <article class="service-card spot" data-reveal data-delay="0">
             <div class="service-top">
               <span class="service-icon" aria-hidden="true">
                 <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><rect x="14" y="14" width="12" height="12" rx="2"/></svg>
@@ -307,7 +307,7 @@
             </ul>
           </article>
 
-          <article class="service-card spot" data-reveal style="--d:1">
+          <article class="service-card spot" data-reveal data-delay="1">
             <div class="service-top">
               <span class="service-icon" aria-hidden="true">
                 <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="24" height="20" rx="3"/><path d="M4 12h24M10 18h7M10 22h12"/></svg>
@@ -323,7 +323,7 @@
             </ul>
           </article>
 
-          <article class="service-card spot" data-reveal style="--d:2">
+          <article class="service-card spot" data-reveal data-delay="2">
             <div class="service-top">
               <span class="service-icon" aria-hidden="true">
                 <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m11 10-6 6 6 6M21 10l6 6-6 6M18 6l-4 20"/></svg>
@@ -339,7 +339,7 @@
             </ul>
           </article>
 
-          <article class="service-card spot" data-reveal style="--d:3">
+          <article class="service-card spot" data-reveal data-delay="3">
             <div class="service-top">
               <span class="service-icon" aria-hidden="true">
                 <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="9" height="9" rx="2"/><rect x="18" y="5" width="9" height="9" rx="4.5"/><rect x="5" y="18" width="9" height="9" rx="4.5"/><rect x="18" y="18" width="9" height="9" rx="2"/></svg>
@@ -448,7 +448,7 @@
           </article>
 
           <!-- Project 2 -->
-          <article class="project" id="project-noma" data-category="branding" data-reveal style="--d:1">
+          <article class="project" id="project-noma" data-category="branding" data-reveal data-delay="1">
             <div class="project-cover">
               <svg viewBox="0 0 640 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
                 <rect width="640" height="480" fill="#d9cdbd"/>
@@ -543,7 +543,7 @@
           </article>
 
           <!-- Project 4 -->
-          <article class="project" id="project-pulse" data-category="product" data-reveal style="--d:1">
+          <article class="project" id="project-pulse" data-category="product" data-reveal data-delay="1">
             <div class="project-cover">
               <svg viewBox="0 0 640 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
                 <defs>
@@ -652,7 +652,7 @@
             </dl>
           </div>
 
-          <form class="contact-form" id="contact-form" novalidate data-reveal style="--d:1">
+          <form class="contact-form" id="contact-form" novalidate data-reveal data-delay="1">
             <div class="field-row">
               <div class="field">
                 <label for="f-name">Your name</label>
